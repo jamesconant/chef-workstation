@@ -31,3 +31,7 @@ suites:
   - name: laptop
     run_list:
       - recipe[chef-workstation::laptop]
+
+  - name: nvidia
+    run_list:
+      - recipe[chef-workstation::nvidia]
