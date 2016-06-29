@@ -1,6 +1,6 @@
 #
 # Cookbook Name:: chef-workstation
-# Recipe:: default
+# Recipe:: apt
 #
 # Copyright 2016, James Conant
 #

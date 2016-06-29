@@ -5,22 +5,29 @@ driver:
 provisioner:
   name: chef_solo
 
+verifier:
+  name: inspec
+
 platforms:
   - name: debian-8.3
 
 suites:
-  - name: workstation-default
-    run_list:
-      - recipe[chef-workstation::default]
-
-  - name: workstation-desktop
-    run_list:
-      - recipe[chef-workstation::desktop]
-
-  - name: workstation-apt
+  - name: apt
     run_list:
       - recipe[chef-workstation::apt]
 
-  - name: workstation-laptop
+  - name: default
+    run_list:
+      - recipe[chef-workstation::default]
+
+  - name: desktop
+    run_list:
+      - recipe[chef-workstation::desktop]
+
+  - name: disable_internal_speaker
+    run_list:
+      - recipe[chef-workstation::disable_internal_speaker]
+
+  - name: laptop
     run_list:
       - recipe[chef-workstation::laptop]

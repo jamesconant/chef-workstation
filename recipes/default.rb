@@ -17,4 +17,5 @@ unless node['platform'] == 'debian'
   raise "Unsupported platform: #{node['platform']}"
 end
 
+include_recipe 'chef-workstation::disable_internal_speaker'
 include_recipe 'chef-workstation::apt'
