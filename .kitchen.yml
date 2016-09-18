@@ -42,3 +42,7 @@ suites:
   - name: intel_wifi
     run_list:
       - recipe[chef-workstation::intel_wifi]
+
+  - name: user
+    run_list:
+      - recipe[chef-workstation::user]
