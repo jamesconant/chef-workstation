@@ -8,3 +8,4 @@
 #
 
 include_recipe 'chef-workstation::default'
+include_recipe 'chef-workstation::nvidia'

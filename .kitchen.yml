@@ -16,10 +16,12 @@ suites:
     run_list:
       - recipe[chef-workstation::apt]
 
+  # needs tests
   - name: default
     run_list:
       - recipe[chef-workstation::default]
 
+  # needs tests
   - name: desktop
     run_list:
       - recipe[chef-workstation::desktop]
@@ -28,6 +30,7 @@ suites:
     run_list:
       - recipe[chef-workstation::disable_internal_speaker]
 
+  # needs tests
   - name: laptop
     run_list:
       - recipe[chef-workstation::laptop]
@@ -35,3 +38,7 @@ suites:
   - name: nvidia
     run_list:
       - recipe[chef-workstation::nvidia]
+
+  - name: intel_wifi
+    run_list:
+      - recipe[chef-workstation::intel_wifi]

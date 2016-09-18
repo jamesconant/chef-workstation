@@ -7,9 +7,6 @@
 # All rights reserved - Do Not Redistribute
 #
 
-#
-# Requires apt recipe
-#
 include_recipe 'chef-workstation::apt'
 
 package 'xserver-xorg-video-nouveau' do
@@ -87,7 +84,6 @@ file '/etc/X11/xorg.conf.d/20-nvidia.conf' do
   EOM
 end
 
-# The nVidia driver has tearing under opengl.
 file '/etc/mpv.conf' do
   mode 0444
   content <<-EOM.gsub(/^ {4}/,'')

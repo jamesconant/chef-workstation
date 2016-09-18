@@ -8,3 +8,6 @@
 #
 
 include_recipe 'chef-workstation::default'
+include_recipe 'chef-workstation::intel_wifi'
+
+package 'wicd-curses'
