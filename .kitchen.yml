@@ -30,6 +30,10 @@ suites:
     run_list:
       - recipe[chef-workstation::disable_internal_speaker]
 
+  - name: i3
+    run_list:
+      - recipe[chef-workstation::i3]
+
   # needs tests
   - name: laptop
     run_list:
