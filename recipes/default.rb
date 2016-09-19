@@ -21,5 +21,7 @@ include_recipe 'chef-workstation::disable_internal_speaker'
 include_recipe 'chef-workstation::apt'
 include_recipe 'chef-workstation::user'
 
+package 'i3'
+
 # vagrant
 # virtualbox
