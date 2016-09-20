@@ -1,0 +1,87 @@
+PATH="$PATH:/opt:/opt/wine/bin:/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/sbin:/usr/local/bin"
+
+# WM Initialization
+sudo startx
+
+# SSH
+eval `ssh-agent -s`
+# this should be generalized better...
+ssh-add /home/jconant/.ssh/ananke_jconant
+
+# General
+
+#alias u='sudo apt-get update && sudo apt-get upgrade'
+alias eb='vim ~/.bashrc'
+alias sb='source ~/.bashrc'
+
+# Terminal Formatting
+
+if [ -n "$DISPLAY" ]; then
+xset b off
+fi
+
+alias ls="ls --color"
+case "$TERM" in
+xterm*) XTITLE="\[\e]0;\w\a\]"
+;;
+rxvt*)  XTITLE="\[\e]0;\w\a\]"
+;;
+*)  XTITLE=""
+;;
+esac
+
+PS1=$XTITLE"\u@\h $ "
+
+# Git / Hub
+
+source ~/.git_bash_completion
+alias g="git"
+alias gf="g fetch"
+alias gs="g status"
+alias gl="g log"
+alias gp="git push"
+alias gpm="git push origin master"
+
+# Bundler
+
+alias b="bundle"
+alias bu="b update"
+alias be="b exec"
+alias bi="b install --path vendor"
+alias binit="bi && b package && echo 'vendor/**/*' >> .gitignore && echo '.idea/**/*' >> .gitignore && echo '.bundle/**/*' >> .gitignore"
+
+# Chef
+
+alias jber="berks vendor -b /home/jconant/chef/chef-jconant-base/Berksfile /home/jconant/chef/cookbooks"
+alias jche="sudo chef-client -c /home/jconant/chef/chef-jconant-client/client.rb"
+alias cu="jber && jche"
+
+# Test Kitchen
+alias kl="be kitchen list"
+alias kc="time be kitchen create"
+alias ko="time be kitchen converge"
+alias kv="time be kitchen verify"
+alias kt="time be kitchen test"
+
+# Wifi
+
+alias wifi="wicd-curses"
+
+# Misc
+
+export QMAKE=/usr/bin/qmake-qt4
+export BROWSER='/usr/bin/google-chrome --new-window'
+
+# Projects
+
+# Rails General
+
+alias s="be rails s"
+alias c="be rails c"
+alias m="be rake db:migrate"
+alias t="be rake test"
+
+# Royce Rails
+
+alias roy="cd ~/projects/royce_rails"
+alias dep="git push heroku master && heroku run rake db:migrate && heroku restart"
