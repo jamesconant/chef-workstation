@@ -16,6 +16,10 @@ suites:
     run_list:
       - recipe[chef-workstation::apt]
 
+  - name: configs
+    run_list:
+      - recipe[chef-workstation::configs]
+
   # needs tests
   - name: default
     run_list:

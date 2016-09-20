@@ -5,6 +5,8 @@
 # Copyright (c) 2016 James Conant, All Rights Reserved.
 #
 
+include_recipe 'chef-workstation::user'
+
 desktop_user = node['desktop']['user']['name']
 desktop_group = node['desktop']['user']['group']
 

@@ -20,8 +20,8 @@ end
 include_recipe 'chef-workstation::disable_internal_speaker'
 include_recipe 'chef-workstation::apt'
 include_recipe 'chef-workstation::user'
-include_recipe 'chef-workstation::i3'
 include_recipe 'chef-workstation::configs'
+include_recipe 'chef-workstation::i3'
 
 # vagrant
 # virtualbox
