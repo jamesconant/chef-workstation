@@ -7,5 +7,8 @@
 # All rights reserved - Do Not Redistribute
 #
 
+include_recipe 'chef-workstation::apt'
+
 package 'xorg'
+package 'xdm'
 package 'i3'

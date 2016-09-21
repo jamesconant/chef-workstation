@@ -1,8 +1,5 @@
 PATH="$PATH:/opt:/opt/wine/bin:/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/sbin:/usr/local/bin"
 
-# WM Initialization
-startx
-
 # SSH
 eval `ssh-agent -s`
 # this should be generalized better...
