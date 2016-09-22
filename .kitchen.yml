@@ -38,6 +38,10 @@ suites:
     run_list:
       - recipe[chef-workstation::i3]
 
+  - name: intel_wifi
+    run_list:
+      - recipe[chef-workstation::intel_wifi]
+
   # needs tests
   - name: laptop
     run_list:
@@ -47,9 +51,9 @@ suites:
     run_list:
       - recipe[chef-workstation::nvidia]
 
-  - name: intel_wifi
+  - name: ruby
     run_list:
-      - recipe[chef-workstation::intel_wifi]
+      - recipe[chef-workstation::ruby]
 
   - name: user
     run_list:

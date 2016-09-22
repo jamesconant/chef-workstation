@@ -23,5 +23,7 @@ include_recipe 'chef-workstation::user'
 include_recipe 'chef-workstation::configs'
 include_recipe 'chef-workstation::i3'
 
+package 'vim'
+
 # vagrant
 # virtualbox
