@@ -22,6 +22,7 @@ include_recipe 'chef-workstation::apt'
 include_recipe 'chef-workstation::user'
 include_recipe 'chef-workstation::configs'
 include_recipe 'chef-workstation::i3'
+include_recipe 'chef-workstation::ruby'
 
 package 'vim'
 
