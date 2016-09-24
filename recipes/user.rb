@@ -18,7 +18,7 @@ node['desktop']['user'].tap do |user|
     gid user['group']
     home user['home']
     shell '/bin/bash'
-    manage_home true
+    manage_home false
   end
 
   directories = [
