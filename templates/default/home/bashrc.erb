@@ -3,7 +3,7 @@ PATH="$PATH:/opt:/opt/wine/bin:/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/sbin:/us
 # SSH
 eval `ssh-agent -s`
 # this should be generalized better...
-ssh-add #{node['desktop']['user']}/.ssh/hermes_jconant_rsa
+ssh-add <%= #{node['desktop']['user']} %>/.ssh/hermes_jconant_rsa
 
 # General
 
