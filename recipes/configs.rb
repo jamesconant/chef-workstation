@@ -14,6 +14,7 @@ desktop_group = node['desktop']['user']['group']
   template "/home/#{desktop_user}/.#{config}" do
     owner desktop_user
     group desktop_group
-    source "home/#{config}"
+    source "home/#{config}.erb"
+    variables({ :home_dir => node[:desktop][:user][:home] })
   end
 end

@@ -3,7 +3,7 @@ PATH="$PATH:/opt:/opt/wine/bin:/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/sbin:/us
 # SSH
 eval `ssh-agent -s`
 # this should be generalized better...
-ssh-add #{node['desktop']['user']}/.ssh/hermes_jconant_rsa
+ssh-add <%= @home_dir %>/.ssh/hermes_jconant_rsa
 
 # General
 
@@ -50,7 +50,7 @@ alias binit="bi && b package && echo 'vendor/**/*' >> .gitignore && echo '.idea/
 # Chef
 
 alias cwd="cd /home/jconant/.chef/chef-workstation"
-alias jber="berks vendor -b /home/jconant/.chef/chef-workstation/Berksfile /home/jconant/chef/cookbooks"
+alias jber="berks vendor -b /home/jconant/.chef/chef-workstation/Berksfile /home/jconant/.chef/cookbooks"
 alias jche="sudo chef-client -c /home/jconant/.chef/chef-jconant-client/client.rb"
 alias cu="jber && jche"
 
