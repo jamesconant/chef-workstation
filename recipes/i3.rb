@@ -7,15 +7,25 @@
 # All rights reserved - Do Not Redistribute
 #
 
-include_recipe 'chef-workstation::apt'
+# include_recipe 'chef-workstation::apt'
+#
+# package 'xorg'
+# package 'xdm'
+# package 'i3'
 
-package 'xorg'
-package 'xdm'
-package 'i3'
+package 'unzip'
+package 'rsync'
 
-remote_file "/tmp/yosemite_fonts.zip" do
-  source 'https://github.com/supermarin/YosemiteSanFranciscoFont/archive/master.zip'
-  # user node['desktop']['user']['name']
-  # group node['desktop']['user']['group']
-  not_if{ File.exists?("tmp/yosemite_fonts.zip") }
+# remote_file "/tmp/yosemite_fonts.zip" do
+#   source 'https://github.com/supermarin/YosemiteSanFranciscoFont/archive/master.zip'
+#   # user node['desktop']['user']['name']
+#   # group node['desktop']['user']['group']
+#   not_if{ File.exists?("tmp/yosemite_fonts.zip") }
+# end
+
+ark 'yosemite-font' do
+  url 'https://github.com/supermarin/YosemiteSanFranciscoFont/archive/master.zip'
+  path '/usr/local/share/fonts'
+  creates 'System San Francisco Display Regular.ttf'
+  action :put
 end

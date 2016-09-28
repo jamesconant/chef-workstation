@@ -5,11 +5,16 @@ DEPENDENCIES
 
 GRAPH
   apt (2.9.2)
+  ark (2.0.0)
+    build-essential (>= 0.0.0)
+    seven_zip (>= 0.0.0)
+    windows (>= 0.0.0)
   build-essential (6.0.6)
     compat_resource (>= 12.14)
     mingw (>= 1.1)
     seven_zip (>= 0.0.0)
   chef-workstation (0.5.1)
+    ark (>= 0.0.0)
     debian (~> 1.8)
     ruby_build (>= 0.0.0)
     ruby_rbenv (>= 0.0.0)
