@@ -11,7 +11,6 @@ include_recipe 'chef-workstation::apt'
 
 node.default[:rbenv][:root_path] = '/opt/rbenv'
 # (Vagrant requires bundler <= 1.10.6)
-node.default[:rbenv][:rubies] = [ '2.3.0' ]
 node.default[:rbenv][:gems] = {
   '2.3.0' => [
     { name: 'bundler', version: '1.10.6' },

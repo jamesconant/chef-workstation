@@ -9,10 +9,6 @@
 
 include_recipe 'chef-workstation::apt'
 
-# package 'firmware-iwlwifi' do
-#   action :install
-# end
-
 package 'firmware-iwlwifi'
 
 execute 'load-iwlwifi' do

@@ -1,3 +1,5 @@
 .bundle
 .kitchen
 vendor
+.idea/
+local-mode-cache/
