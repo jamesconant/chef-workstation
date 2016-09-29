@@ -23,7 +23,7 @@ package 'rsync'
 #   not_if{ File.exists?("tmp/yosemite_fonts.zip") }
 # end
 
-ark 'yosemite-font' do
+ark 'YosemiteSanFranciscoFont-master.zip' do
   url 'https://github.com/supermarin/YosemiteSanFranciscoFont/archive/master.zip'
   path '/usr/local/share/fonts'
   creates 'System San Francisco Display Regular.ttf'
