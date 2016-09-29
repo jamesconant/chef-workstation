@@ -26,6 +26,6 @@ package 'rsync'
 ark 'YosemiteSanFranciscoFont-master' do
   url 'https://github.com/supermarin/YosemiteSanFranciscoFont/archive/master.zip'
   path '/usr/local/share/fonts'
-  creates 'System San Francisco Display Regular.ttf'
+  creates 'System San Francisco Display Thin.ttf'
   action :cherry_pick
 end
