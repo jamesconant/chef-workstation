@@ -1,11 +1,11 @@
 #
-# Cookbook Name:: chef-workstation
+# Cookbook Name:: workstation
 # Recipe:: configs
 #
 # Copyright (c) 2016 James Conant, All Rights Reserved.
 #
 
-include_recipe 'chef-workstation::user'
+include_recipe 'workstation::user'
 
 desktop_user = node['desktop']['user']['name']
 desktop_group = node['desktop']['user']['group']

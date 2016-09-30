@@ -1,5 +1,5 @@
 #
-# Cookbook Name:: chef-workstation
+# Cookbook Name:: workstation
 # Recipe:: user
 #
 # Copyright 2016, James Conant

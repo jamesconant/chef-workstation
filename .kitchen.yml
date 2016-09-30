@@ -13,52 +13,50 @@ platforms:
   - name: debian-8.3
 
 suites:
+  # TODO figure out how to specify apt repository that system uses for non-apt recipes. Do they use apt even?
   - name: apt
     run_list:
-      - recipe[chef-workstation::apt]
-    attributes:
-      debian:
-        mirror: 'mirror.cc.columbia.edu'
+      - recipe[workstation::apt]
 
   - name: configs
     run_list:
-      - recipe[chef-workstation::configs]
+      - recipe[workstation::configs]
 
   # needs tests
   - name: default
     run_list:
-      - recipe[chef-workstation::default]
+      - recipe[workstation::default]
 
   # needs tests
   - name: desktop
     run_list:
-      - recipe[chef-workstation::desktop]
+      - recipe[workstation::desktop]
 
   - name: disable_internal_speaker
     run_list:
-      - recipe[chef-workstation::disable_internal_speaker]
+      - recipe[workstation::disable_internal_speaker]
 
   - name: i3
     run_list:
-      - recipe[chef-workstation::i3]
+      - recipe[workstation::i3]
 
   - name: intel_wifi
     run_list:
-      - recipe[chef-workstation::intel_wifi]
+      - recipe[workstation::intel_wifi]
 
   # needs tests
   - name: laptop
     run_list:
-      - recipe[chef-workstation::laptop]
+      - recipe[workstation::laptop]
 
   - name: nvidia
     run_list:
-      - recipe[chef-workstation::nvidia]
+      - recipe[workstation::nvidia]
 
   - name: ruby
     run_list:
-      - recipe[chef-workstation::ruby]
+      - recipe[workstation::ruby]
 
   - name: user
     run_list:
-      - recipe[chef-workstation::user]
+      - recipe[workstation::user]

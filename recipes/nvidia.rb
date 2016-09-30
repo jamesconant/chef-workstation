@@ -1,5 +1,5 @@
 #
-# Cookbook Name:: chef-workstation
+# Cookbook Name:: workstation
 # Recipe:: nvidia
 #
 # Copyright 2016, James Conant
@@ -7,7 +7,7 @@
 # All rights reserved - Do Not Redistribute
 #
 
-include_recipe 'chef-workstation::apt'
+include_recipe 'workstation::apt'
 
 package 'xserver-xorg-video-nouveau' do
   action :purge

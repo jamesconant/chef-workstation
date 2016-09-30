@@ -1,11 +1,15 @@
 #
-# Cookbook Name:: chef-workstation
+# Cookbook Name:: workstation
 # Recipe:: apt
 #
 # Copyright 2016, James Conant
 #
 # All rights reserved - Do Not Redistribute
 #
+
+node.default['debian']['mirror'] = 'http://mirror.rit.edu/debian'
+node.set['debian']['deb_src'] = true
+platform_recipe = 'debian'
 
 # Force apt to keep your old configuration files when possible,
 # instead of prompting for you to make a decision.
@@ -25,4 +29,4 @@ execute 'configure-multiarch' do
   notifies :run, 'execute[apt-get update]', :immediately
 end
 
-include_recipe 'debian'
+include_recipe platform_recipe

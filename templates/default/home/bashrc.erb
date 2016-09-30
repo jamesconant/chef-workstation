@@ -49,9 +49,10 @@ alias binit="bi && b package && echo 'vendor/**/*' >> .gitignore && echo '.idea/
 
 # Chef
 
-alias cwd="cd /home/jconant/.chef/chef-workstation"
-alias jber="berks vendor -b /home/jconant/.chef/chef-workstation/Berksfile /home/jconant/.chef/cookbooks"
-alias jche="sudo chef-client -c /home/jconant/.chef/chef-workstation/client.rb"
+# TODO - replace 'chef-laptop' refs with attribute passed in when generating
+alias cwd="cd /home/jconant/.chef/chef-laptop"
+alias jber="berks vendor -b /home/jconant/.chef/chef-laptop/Berksfile /home/jconant/.chef/cookbooks"
+alias jche="sudo chef-client -c /home/jconant/.chef/chef-laptop/client.rb"
 alias cu="jber && jche"
 
 # Test Kitchen

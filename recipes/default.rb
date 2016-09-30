@@ -1,5 +1,5 @@
 #
-# Cookbook Name:: chef-workstation
+# Cookbook Name:: workstation
 # Recipe:: default
 #
 # Copyright 2016, James Conant
@@ -17,12 +17,12 @@ unless node['platform'] == 'debian'
   raise "Unsupported platform: #{node['platform']}"
 end
 
-include_recipe 'chef-workstation::disable_internal_speaker'
-include_recipe 'chef-workstation::apt'
-include_recipe 'chef-workstation::user'
-include_recipe 'chef-workstation::configs'
-include_recipe 'chef-workstation::i3'
-include_recipe 'chef-workstation::ruby'
+include_recipe 'workstation::disable_internal_speaker'
+include_recipe 'workstation::apt'
+include_recipe 'workstation::user'
+include_recipe 'workstation::configs'
+include_recipe 'workstation::i3'
+include_recipe 'workstation::ruby'
 
 package 'vim'
 

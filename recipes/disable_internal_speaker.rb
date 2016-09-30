@@ -1,5 +1,5 @@
 #
-# Cookbook Name:: chef-workstation
+# Cookbook Name:: workstation
 # Recipe:: disable_internal_speaker
 #
 # Copyright 2016, James Conant

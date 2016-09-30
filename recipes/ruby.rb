@@ -1,5 +1,5 @@
 #
-# Cookbook Name:: chef-workstation
+# Cookbook Name:: workstation
 # Recipe:: ruby
 #
 # Copyright 2016, James Conant
@@ -7,7 +7,7 @@
 # All rights reserved - Do Not Redistribute
 #
 
-include_recipe 'chef-workstation::apt'
+include_recipe 'workstation::apt'
 
 node.default[:rbenv][:root_path] = '/opt/rbenv'
 # (Vagrant requires bundler <= 1.10.6)
