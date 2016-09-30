@@ -1,6 +1,7 @@
 ---
 driver:
   name: vagrant
+  # name: docker -- TODO setup docker as test driver
 
 provisioner:
   name: chef_solo
@@ -15,6 +16,9 @@ suites:
   - name: apt
     run_list:
       - recipe[chef-workstation::apt]
+    attributes:
+      debian:
+        mirror: 'mirror.cc.columbia.edu'
 
   - name: configs
     run_list:
