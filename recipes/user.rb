@@ -7,63 +7,43 @@
 # All rights reserved - Do Not Redistribute
 #
 
-node['desktop']['user'].tap do |user|
-  group user['group'] do
-    gid user['gid']
-  end
+include_recipe 'desktop::user'
 
-  user user['name'] do
-    comment "administrator"
-    uid user['uid']
-    gid user['group']
-    home user['home']
-    shell '/bin/bash'
-    manage_home false
-  end
+user = node['desktop']['user']
 
-  directory user['home'] do
+# delete default directories created by desktop::user
+directories_to_delete = [
+  'Desktop',
+  'Downloads',
+  'Documents',
+  'Music',
+  'Pictures',
+  'Public',
+  'Templates',
+  'Videos'
+]
+
+directories_to_delete.each do |dir|
+  directory user['home'] + "/#{dir}" do
+    recursive true
+    action :delete
+  end
+end
+
+directories = [
+  '.kdb',
+  '.ssh',
+  'bin',
+  'doc',
+  'dls',
+  'prj',
+  'tmp'
+]
+
+directories.each do |dir|
+  directory user['home'] + "/#{dir}" do
     owner user['name']
     group user['group']
     mode 0700
   end
-
-  directories = [
-    '.kdb',
-    '.ssh',
-    'bin',
-    'doc',
-    'dls',
-    'prj',
-    'tmp'
-  ]
-
-  directories.each do |dir|
-    directory user['home'] + "/#{dir}" do
-      owner user['name']
-      group user['group']
-      mode 0700
-    end
-  end
-
-  file "/etc/sudoers.d/#{user['name']}" do
-    user 'root'
-    group 'root'
-    mode 0440
-    content <<-EOM.gsub(/^ {6}/,'')
-      # This file is maintained by Chef.
-      # Local changes will be overwritten.
-      #{user['name']} ALL=(ALL:ALL) NOPASSWD: ALL
-    EOM
-  end
-end
-
-file "/etc/sudoers.d/proxy" do
-  user 'root'
-  group 'root'
-  mode 0440
-  content <<-EOM.gsub(/^ {6}/,'')
-      # This file is maintained by Chef.
-      # Local changes will be overwritten.
-      Defaults env_keep += "http_proxy https_proxy"
-  EOM
 end

@@ -1,4 +1,7 @@
 DEPENDENCIES
+  desktop
+    git: git@github.com:http-418/chef-desktop
+    revision: 664d8b24ae3edfe92ca4fab5b410706cf53215a0
   workstation
     path: .
     metadata: true
@@ -16,6 +19,15 @@ GRAPH
   compat_resource (12.14.7)
   debian (1.8.0)
     apt (< 3.0)
+  desktop (0.1.0)
+    apt (>= 0.0.0)
+    ark (>= 0.0.0)
+    debian (~> 1.8)
+    java (~> 1.0)
+    nodejs (>= 0.0.0)
+    ruby_build (>= 0.0.0)
+    ruby_rbenv (>= 0.0.0)
+    ubuntu (>= 0.0.0)
   homebrew (2.1.2)
     build-essential (>= 2.1.2)
   java (1.42.0)
@@ -25,6 +37,12 @@ GRAPH
   mingw (1.2.4)
     compat_resource (>= 0.0.0)
     seven_zip (>= 0.0.0)
+  nodejs (2.4.4)
+    apt (>= 0.0.0)
+    ark (>= 0.0.0)
+    build-essential (>= 0.0.0)
+    homebrew (>= 0.0.0)
+    yum-epel (>= 0.0.0)
   ruby_build (1.0.0)
     yum-epel (>= 0.0.0)
   ruby_rbenv (1.1.0)
@@ -32,10 +50,13 @@ GRAPH
     ruby_build (>= 0.0.0)
   seven_zip (2.0.2)
     windows (>= 1.2.2)
+  ubuntu (2.0.0)
+    apt (>= 0.0.0)
   windows (2.0.2)
-  workstation (0.5.2)
+  workstation (0.5.4)
     ark (>= 0.0.0)
     debian (~> 1.8)
+    desktop (>= 0.0.0)
     ruby_build (>= 0.0.0)
     ruby_rbenv (>= 0.0.0)
   yum (4.0.0)

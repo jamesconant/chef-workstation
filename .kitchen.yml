@@ -12,10 +12,6 @@ platforms:
   - name: debian-8.3
 
 suites:
-  - name: apt
-    run_list:
-      - recipe[workstation::apt]
-
   - name: configs
     run_list:
       - recipe[workstation::configs]
@@ -27,10 +23,6 @@ suites:
   - name: desktop
     run_list:
       - recipe[workstation::desktop]
-
-  - name: disable_internal_speaker
-    run_list:
-      - recipe[workstation::disable_internal_speaker]
 
   - name: i3
     run_list:
@@ -55,12 +47,3 @@ suites:
   - name: user
     run_list:
       - recipe[workstation::user]
-    attributes:
-      desktop:
-        user:
-          name: 'test_user'
-          uid: '2000'
-          group: 'test_user'
-          gid: '2000'
-          home: '/home/test_user'
-
