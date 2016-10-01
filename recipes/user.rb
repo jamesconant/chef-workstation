@@ -12,23 +12,23 @@ include_recipe 'desktop::user'
 user = node['desktop']['user']
 
 # delete default directories created by desktop::user
-directories_to_delete = [
-  'Desktop',
-  'Downloads',
-  'Documents',
-  'Music',
-  'Pictures',
-  'Public',
-  'Templates',
-  'Videos'
-]
-
-directories_to_delete.each do |dir|
-  directory user['home'] + "/#{dir}" do
-    recursive true
-    action :delete
-  end
-end
+# directories_to_delete = [
+#   'Desktop',
+#   'Downloads',
+#   'Documents',
+#   'Music',
+#   'Pictures',
+#   'Public',
+#   'Templates',
+#   'Videos'
+# ]
+#
+# directories_to_delete.each do |dir|
+#   directory user['home'] + "/#{dir}" do
+#     recursive true
+#     action :delete
+#   end
+# end
 
 directories = [
   '.kdb',
