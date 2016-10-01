@@ -5,7 +5,7 @@
 # Copyright (c) 2016 James Conant, All Rights Reserved.
 #
 
-include_recipe 'workstation::user'
+include_recipe 'desktop::user'
 
 desktop_user = node['desktop']['user']['name']
 desktop_group = node['desktop']['user']['group']
