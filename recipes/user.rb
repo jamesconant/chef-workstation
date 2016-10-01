@@ -21,6 +21,12 @@ node['desktop']['user'].tap do |user|
     manage_home false
   end
 
+  directory user['home'] do
+    owner user['name']
+    group user['group']
+    mode 0700
+  end
+
   directories = [
     '.kdb',
     '.ssh',
