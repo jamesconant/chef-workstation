@@ -7,8 +7,6 @@
 # All rights reserved - Do Not Redistribute
 #
 
-include_recipe 'workstation::apt'
-
 package 'xserver-xorg-video-nouveau' do
   action :purge
 end

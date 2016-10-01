@@ -7,8 +7,6 @@
 # All rights reserved - Do Not Redistribute
 #
 
-include_recipe 'workstation::apt'
-
 node.default[:rbenv][:root_path] = '/opt/rbenv'
 # (Vagrant requires bundler <= 1.10.6)
 node.default[:rbenv][:gems] = {

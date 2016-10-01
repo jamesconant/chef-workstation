@@ -7,8 +7,6 @@
 # All rights reserved - Do Not Redistribute
 #
 
-include_recipe 'workstation::apt'
-
 package 'firmware-iwlwifi'
 
 execute 'load-iwlwifi' do
