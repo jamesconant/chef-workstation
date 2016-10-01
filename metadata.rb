@@ -4,8 +4,9 @@ maintainer_email 'jfaconant@gmail.com'
 license          'All rights reserved'
 description      'Installs/Configures workstation'
 long_description IO.read(File.join(File.dirname(__FILE__), 'README.md'))
-version          '0.5.3'
+version          '0.5.4'
 
+depends 'desktop'
 depends 'debian', '~> 1.8'
 depends 'ruby_build'
 depends 'ruby_rbenv'
