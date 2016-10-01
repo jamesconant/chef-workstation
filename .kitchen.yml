@@ -43,7 +43,3 @@ suites:
   - name: ruby
     run_list:
       - recipe[workstation::ruby]
-
-  - name: user
-    run_list:
-      - recipe[workstation::user]

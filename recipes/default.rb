@@ -19,7 +19,7 @@ end
 
 include_recipe 'desktop::pc-speaker'
 include_recipe 'desktop::apt'
-include_recipe 'workstation::user'
+include_recipe 'desktop::user'
 include_recipe 'workstation::configs'
 include_recipe 'workstation::i3'
 include_recipe 'workstation::ruby'
