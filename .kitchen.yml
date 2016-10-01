@@ -12,25 +12,9 @@ platforms:
   - name: debian-8.3
 
 suites:
-  - name: configs
-    run_list:
-      - recipe[workstation::configs]
-
-  - name: default
-    run_list:
-      - recipe[workstation::default]
-
   - name: desktop
     run_list:
       - recipe[workstation::desktop]
-
-  - name: i3
-    run_list:
-      - recipe[workstation::i3]
-
-  - name: intel_wifi
-    run_list:
-      - recipe[workstation::intel_wifi]
 
   - name: laptop
     run_list:
@@ -39,7 +23,3 @@ suites:
   - name: nvidia
     run_list:
       - recipe[workstation::nvidia]
-
-  - name: ruby
-    run_list:
-      - recipe[workstation::ruby]
