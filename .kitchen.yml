@@ -1,7 +1,6 @@
 ---
 driver:
   name: vagrant
-  # name: docker -- TODO setup docker as test driver
 
 provisioner:
   name: chef_solo
@@ -13,7 +12,6 @@ platforms:
   - name: debian-8.3
 
 suites:
-  # TODO figure out how to specify apt repository that system uses for non-apt recipes. Do they use apt even?
   - name: apt
     run_list:
       - recipe[workstation::apt]
@@ -22,12 +20,10 @@ suites:
     run_list:
       - recipe[workstation::configs]
 
-  # needs tests
   - name: default
     run_list:
       - recipe[workstation::default]
 
-  # needs tests
   - name: desktop
     run_list:
       - recipe[workstation::desktop]
@@ -44,7 +40,6 @@ suites:
     run_list:
       - recipe[workstation::intel_wifi]
 
-  # needs tests
   - name: laptop
     run_list:
       - recipe[workstation::laptop]
@@ -60,3 +55,12 @@ suites:
   - name: user
     run_list:
       - recipe[workstation::user]
+    attributes:
+      desktop:
+        user:
+          name: 'test_user'
+          uid: '2000'
+          group: 'test_user'
+          gid: '2000'
+          home: '/home/test_user'
+
