@@ -15,6 +15,7 @@ desktop_group = node['desktop']['user']['group']
     owner desktop_user
     group desktop_group
     source "home/#{config}.erb"
-    variables({ :home_dir => node[:desktop][:user][:home] })
+    variables({ :home_dir => node[:desktop][:user][:home],
+                :host_name => node[:host][:name] })
   end
 end
