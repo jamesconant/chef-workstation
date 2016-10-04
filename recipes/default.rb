@@ -32,10 +32,8 @@ include_recipe 'desktop::scala'
 include_recipe 'desktop::slack'
 include_recipe 'desktop::spotify'
 include_recipe 'desktop::ssh'
-include_recipe 'desktop::steam'
 include_recipe 'desktop::user'
 include_recipe 'desktop::vagrant'
-include_recipe 'desktop::wine'
 
 package [
   :gimp,
