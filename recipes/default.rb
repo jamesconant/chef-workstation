@@ -17,11 +17,11 @@ unless node['platform'] == 'debian'
   raise "Unsupported platform: #{node['platform']}"
 end
 
-include_recipe 'desktop::pc-speaker'
-include_recipe 'desktop::apt'
-include_recipe 'desktop::user'
-include_recipe 'workstation::configs'
-include_recipe 'workstation::i3'
+# include_recipe 'desktop::pc-speaker'
+# include_recipe 'desktop::apt'
+# include_recipe 'desktop::user'
+# include_recipe 'workstation::configs'
+# include_recipe 'workstation::i3'
 include_recipe 'workstation::ruby'
 
 package 'vim'
