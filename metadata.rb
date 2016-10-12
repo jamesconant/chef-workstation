@@ -13,8 +13,9 @@ version          '0.5.13'
 #
 # (1) https://github.com/berkshelf/berkshelf/issues/1174
 #
-# depends 'desktop'
-#
+# desktop cookbook included here for test purposes.
+depends 'desktop'
+
 depends 'debian', '~> 1.8'
 depends 'ruby_build'
 depends 'ruby_rbenv'

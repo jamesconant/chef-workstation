@@ -7,7 +7,7 @@ source 'https://supermarket.chef.io'
 #
 # (1) https://github.com/berkshelf/berkshelf/issues/1174
 #
-# cookbook 'desktop', git: 'git@github.com:http-418/chef-desktop'
-#
+# desktop cookbook included here for test purposes.
+cookbook 'desktop', git: 'git@github.com:http-418/chef-desktop'
 
 metadata
