@@ -19,3 +19,7 @@ suites:
   - name: laptop
     run_list:
       - recipe[workstation::laptop]
+
+  - name: slack
+    run_list:
+      - recipe[workstation::slack]

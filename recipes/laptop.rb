@@ -10,3 +10,5 @@
 include_recipe 'workstation::default'
 include_recipe 'workstation::intel_wifi'
 package 'wicd-curses'
+
+delete_resource(:package, 'systemd, ifupdown')

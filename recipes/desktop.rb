@@ -19,3 +19,5 @@ package [
   action :upgrade
   timeout 3600
 end
+
+delete_resource(:package, 'systemd, ifupdown')
