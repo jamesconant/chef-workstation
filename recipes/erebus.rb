@@ -1,6 +1,6 @@
 #
 # Cookbook Name:: workstation
-# Recipe:: laptop
+# Recipe:: erebus
 #
 # Copyright 2016, James Conant
 #
@@ -9,4 +9,5 @@
 
 include_recipe 'workstation::default'
 include_recipe 'workstation::intel_wifi'
+
 package 'wicd-curses'

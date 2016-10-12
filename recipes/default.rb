@@ -22,7 +22,7 @@ include_recipe 'workstation::configs'
 include_recipe 'desktop::docker'
 include_recipe 'desktop::fonts'
 include_recipe 'desktop::google-chrome'
-# include_recipe 'desktop::heroku' -- currently broken
+include_recipe 'desktop::heroku'
 include_recipe 'workstation::i3'
 include_recipe 'desktop::java'
 include_recipe 'desktop::pc-speaker'
@@ -39,8 +39,6 @@ package [
   :gimp,
   :inkscape,
   :keepassx,
-  :mumble,
-  :winetricks,
   :vim,
   :zip
 ] do
