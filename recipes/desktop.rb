@@ -8,7 +8,8 @@
 #
 
 include_recipe 'workstation::default'
-include_recipe 'workstation::nvidia'
+# broken by upstream bug in ifupdown
+# include_recipe 'workstation::nvidia'
 include_recipe 'desktop::steam'
 include_recipe 'desktop::wine'
 
