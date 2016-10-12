@@ -1,3 +1,3 @@
-include_recipe 'desktop::nvidia'
+include_recipe 'desktop::slack'
 
 delete_resource(:package, 'systemd, ifupdown')

@@ -8,7 +8,7 @@
 #
 
 include_recipe 'workstation::default'
-include_recipe 'desktop::nvidia'
+include_recipe 'workstation::nvidia'
 include_recipe 'desktop::steam'
 include_recipe 'desktop::wine'
 
@@ -19,5 +19,3 @@ package [
   action :upgrade
   timeout 3600
 end
-
-delete_resource(:package, 'systemd, ifupdown')
