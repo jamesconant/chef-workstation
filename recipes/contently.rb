@@ -5,6 +5,7 @@
 # Copyright (c) 2016 James Conant, All Rights Reserved.
 #
 
+include_recipe 'desktop::apt'
 include_recipe 'desktop::ruby'
 
 # package 'libiconv'
