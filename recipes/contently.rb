@@ -5,8 +5,10 @@
 # Copyright (c) 2016 James Conant, All Rights Reserved.
 #
 
-include_recipe 'desktop::apt'
-include_recipe 'workstation::ruby'
+
+
+# include_recipe 'desktop::apt'
+# include_recipe 'workstation::ruby'
 
 # package 'libiconv'
 # package 'libxslt'
@@ -14,8 +16,8 @@ include_recipe 'workstation::ruby'
 # package 'qmake-qt4'
 # package 'postgresql'
 
-include_recipe 'desktop::user'
-#
+# include_recipe 'desktop::user'
+
 # postgresql_user 'contently' do
 #   superuser true
 #   createdb true
