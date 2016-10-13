@@ -30,7 +30,10 @@ include_recipe 'desktop::ruby'
 # require java recipe :(
 # include_recipe 'desktop::sbt'
 # include_recipe 'desktop::scala'
-include_recipe 'desktop::spotify'
+
+# apt repo not getting set properly
+# include_recipe 'desktop::spotify'
+
 include_recipe 'desktop::ssh'
 include_recipe 'desktop::user'
 include_recipe 'desktop::vagrant'
