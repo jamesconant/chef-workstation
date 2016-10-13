@@ -6,7 +6,7 @@
 #
 
 include_recipe 'desktop::apt'
-include_recipe 'desktop::ruby'
+include_recipe 'workstation::ruby'
 
 # package 'libiconv'
 # package 'libxslt'
@@ -14,7 +14,7 @@ include_recipe 'desktop::ruby'
 # package 'qmake-qt4'
 # package 'postgresql'
 
-# include_recipe 'desktop::user'
+include_recipe 'desktop::user'
 #
 # postgresql_user 'contently' do
 #   superuser true
