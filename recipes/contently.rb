@@ -20,8 +20,7 @@ postgresql_database_user 'contently' do
   connection postgresql_connection_info
   # database_name 'contently'
   password 'contently'
-  privileges [:all]
-  action :grant
+  action :create
 end
 
 postgresql_database 'contently' do
