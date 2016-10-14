@@ -50,6 +50,17 @@ execute "adminpack extension on contently" do
   action :run
 end
 
+user_name = node['desktop']['user']['name']
+user_group = node['desktop']['user']['group']
+project_dir = "/home/#{user_name}/projects/contently"
+
+directory project_dir do
+  owner user_name
+  group user_group
+  mode '0755'
+  action :create
+end
+
 # include_recipe 'desktop::apt'
 # include_recipe 'workstation::ruby'
 
@@ -57,25 +68,6 @@ end
 # package 'libxslt'
 # package 'imagemagick'
 # package 'qmake-qt4'
-#
-# postgresql_extension 'adminpack' do
-#   database 'contently'
-# end
-#
-# postgresql_extension 'hstore' do
-#   database 'contently'
-# end
-#
-# user_name = node['desktop']['user']['name']
-# user_group = node['desktop']['user']['group']
-# project_dir = "/home/#{user_name}/projects/contently"
-#
-# directory project_dir do
-#   owner user_name
-#   group user_group
-#   mode '0755'
-#   action :create
-# end
 #
 # git project_dir do
 #   repository 'git@github.com:contently/contently.git'
