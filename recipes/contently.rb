@@ -64,6 +64,12 @@ directory project_dir do
   action :create
 end
 
+git project_dir do
+  repository 'git@github.com:contently/contently.git'
+  revision 'master'
+  action :sync
+end
+
 # include_recipe 'desktop::apt'
 # include_recipe 'workstation::ruby'
 
@@ -72,11 +78,6 @@ end
 # package 'imagemagick'
 # package 'qmake-qt4'
 #
-# git project_dir do
-#   repository 'git@github.com:contently/contently.git'
-#   revision 'master'
-#   action :sync
-# end
 #
 # file "#{project_dir}/config/database.yml" do
 #   owner user_name
