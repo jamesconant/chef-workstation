@@ -35,6 +35,16 @@ postgresql_database_user 'contently' do
   action :grant
 end
 
+execute "install postgres contrib" do
+  action :run
+  command "apt-get -y install postgresql-contrib-9.4"
+end
+
+execute "hstore extension on template1" do
+  command 'sudo -u postgres psql -d contently -c "CREATE EXTENSION IF NOT EXISTS hstore";'
+  action :run
+end
+
 # include_recipe 'desktop::apt'
 # include_recipe 'workstation::ruby'
 
@@ -42,32 +52,6 @@ end
 # package 'libxslt'
 # package 'imagemagick'
 # package 'qmake-qt4'
-# package 'postgresql'
-
-# include_recipe 'desktop::user'
-
-# postgresql_user 'contently' do
-#   superuser true
-#   createdb true
-#   login true
-#   replication true
-#   password 'contently'
-# end
-#
-# postgresql_user 'analytics' do
-#   superuser true
-#   createdb true
-#   login true
-#   replication true
-#   password 'contently'
-# end
-#
-# postgresql_database 'contently' do
-#   owner 'contently'
-#   encoding 'UTF-8'
-#   template 'template1'
-#   locale 'en_US.UTF-8'
-# end
 #
 # postgresql_extension 'adminpack' do
 #   database 'contently'
