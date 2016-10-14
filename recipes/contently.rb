@@ -8,7 +8,27 @@
 include_recipe 'postgresql::client'
 include_recipe 'postgresql::server'
 include_recipe 'database::postgresql'
-raise
+
+postgresql_connection_info = {
+  :host     => '127.0.0.1',
+  :port     => node['postgresql']['config']['port'],
+  :username => 'postgres',
+  :password => node['postgresql']['password']['postgres']
+}
+
+postgresql_database_user 'contently' do
+  connection postgresql_connection_info
+  # database_name 'contently'
+  password 'contently'
+  privileges [:all]
+  action :grant
+end
+
+postgresql_database 'contently' do
+  connection postgresql_connection_info
+  owner 'contently'
+  action :create
+end
 
 # include_recipe 'desktop::apt'
 # include_recipe 'workstation::ruby'
