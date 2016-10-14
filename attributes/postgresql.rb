@@ -1,1 +1,1 @@
-default['postgresql']['password']['postgres'] = 'contently'
+default['postgresql']['password']['postgres'] = 'postgres'
