@@ -77,7 +77,7 @@ directory "/home/#{user_name}/.ssh" do
 end
 
 Chef::Log.fatal("BEGIN NODE SSH LOG")
-Chef::Log.fatal(node['ssh'])
+Chef::Log.fatal(node['host']['name'])
 Chef::Log.fatal("END NODE SSH LOG")
 
 template "/home/#{user_name}/.ssh/contently_rsa.pub" do
