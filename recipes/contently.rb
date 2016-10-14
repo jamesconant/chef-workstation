@@ -50,6 +50,8 @@ execute "adminpack extension on contently" do
   action :run
 end
 
+include_recipe 'desktop::user'
+
 user_name = node['desktop']['user']['name']
 user_group = node['desktop']['user']['group']
 project_dir = "/home/#{user_name}/projects/contently"
