@@ -76,6 +76,12 @@ directory "/home/#{user_name}/.ssh" do
   action :create
 end
 
+Debugging
+chef_gem 'pry'
+require 'pry'
+
+binding.pry
+
 template "/home/#{user_name}/.ssh/contently_rsa.pub" do
   source "id_rsa.pub.erb"
   owner user_name
