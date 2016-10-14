@@ -8,6 +8,7 @@
 include_recipe 'postgresql::client'
 include_recipe 'postgresql::server'
 include_recipe 'database::postgresql'
+raise
 
 # include_recipe 'desktop::apt'
 # include_recipe 'workstation::ruby'
