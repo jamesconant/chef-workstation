@@ -18,7 +18,6 @@ postgresql_connection_info = {
 
 postgresql_database_user 'contently' do
   connection postgresql_connection_info
-  # database_name 'contently'
   password 'contently'
   action :create
 end
@@ -27,6 +26,13 @@ postgresql_database 'contently' do
   connection postgresql_connection_info
   owner 'contently'
   action :create
+end
+
+postgresql_database_user 'contently' do
+  connection postgresql_connection_info
+  database_name 'contently'
+  privileges [:all]
+  action :grant
 end
 
 # include_recipe 'desktop::apt'
