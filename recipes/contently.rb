@@ -76,7 +76,7 @@ directory "/home/#{user_name}/.ssh" do
   action :create
 end
 
-Chef::Log.fatal(node)
+Chef::Log.fatal(node[:ssh])
 
 template "/home/#{user_name}/.ssh/contently_rsa.pub" do
   source "id_rsa.pub.erb"
