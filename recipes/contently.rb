@@ -52,54 +52,53 @@ end
 
 include_recipe 'desktop::user'
 
-user_name = node['desktop']['user']['name']
-user_group = node['desktop']['user']['group']
-project_dir = "/home/#{user_name}/projects/contently"
+# user_name = node['desktop']['user']['name']
+# user_group = node['desktop']['user']['group']
+# project_dir = "/home/#{user_name}/projects/contently"
+#
+# directory project_dir do
+#   owner user_name
+#   group user_group
+#   mode '0755'
+#   recursive true
+#   action :create
+# end
 
-directory project_dir do
-  owner user_name
-  group user_group
-  mode '0755'
-  recursive true
-  action :create
-end
+package 'git'
 
-git_client 'default' do
-  action :install
-end
+# directory "/home/#{user_name}/.ssh" do
+#   owner user_name
+#   group user_group
+#   mode '0755'
+#   recursive true
+#   action :create
+# end
+#
+# Chef::Log.fatal("BEGIN NODE SSH LOG")
+# Chef::Log.fatal(node['host']['name'])
+# Chef::Log.fatal("END NODE SSH LOG")
+#
+# template "/home/#{user_name}/.ssh/contently_rsa.pub" do
+#   source "id_rsa.pub.erb"
+#   owner user_name
+#   mode 0600
+#   variables({ :pub_key => node['ssh']['contently']['pub_key'] })
+# end
+#
+# template "/home/#{user_name}/.ssh/contently_rsa" do
+#   source "id_rsa.erb"
+#   owner user_name
+#   mode 0600
+#   variables({ :priv_key => node['ssh']['contently']['priv_key'] })
+# end
 
-directory "/home/#{user_name}/.ssh" do
-  owner user_name
-  group user_group
-  mode '0755'
-  recursive true
-  action :create
-end
-
-Chef::Log.fatal("BEGIN NODE SSH LOG")
-Chef::Log.fatal(node['host']['name'])
-Chef::Log.fatal("END NODE SSH LOG")
-
-template "/home/#{user_name}/.ssh/contently_rsa.pub" do
-  source "id_rsa.pub.erb"
-  owner user_name
-  mode 0600
-  variables({ :pub_key => node['ssh']['contently']['pub_key'] })
-end
-
-template "/home/#{user_name}/.ssh/contently_rsa" do
-  source "id_rsa.erb"
-  owner user_name
-  mode 0600
-  variables({ :priv_key => node['ssh']['contently']['priv_key'] })
-end
-
-git project_dir do
-  # repository 'git@github.com:contently/contently.git'
-  repository "ext::ssh -i /home/#{user_name}/.ssh/contently_rsa -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no git@github.com:contently/contently.git"
-  revision 'master'
-  action :sync
-end
+# git project_dir do
+#   # repository 'git@github.com:contently/contently.git'
+#   repository "ext::ssh -i /home/#{user_name}/.ssh/contently_rsa -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no git@github.com:contently/contently.git"
+#   # ext::ssh -i /path/to/.ssh/deployment_key -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no git@github.com %S /my_name/some_repo.git
+#   revision 'master'
+#   action :sync
+# end
 
 # include_recipe 'desktop::apt'
 # include_recipe 'workstation::ruby'
