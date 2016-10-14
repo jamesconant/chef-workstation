@@ -40,8 +40,13 @@ execute "install postgres contrib" do
   command "apt-get -y install postgresql-contrib-9.4"
 end
 
-execute "hstore extension on template1" do
+execute "hstore extension on contently" do
   command 'sudo -u postgres psql -d contently -c "CREATE EXTENSION IF NOT EXISTS hstore";'
+  action :run
+end
+
+execute "adminpack extension on contently" do
+  command 'sudo -u postgres psql -d contently -c "CREATE EXTENSION IF NOT EXISTS adminpack";'
   action :run
 end
 
