@@ -5,7 +5,8 @@
 # Copyright (c) 2016 James Conant, All Rights Reserved.
 #
 
-
+include_recipe 'postgresql::client'
+include_recipe 'postgresql::server'
 
 # include_recipe 'desktop::apt'
 # include_recipe 'workstation::ruby'
