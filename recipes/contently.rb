@@ -76,7 +76,7 @@ directory "/home/#{user_name}/.ssh" do
   action :create
 end
 
-Debugging
+# Debugging
 chef_gem 'pry'
 require 'pry'
 
