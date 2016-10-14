@@ -3,3 +3,4 @@
 vendor
 .idea/
 local-mode-cache/
+attributes/ssh.rb

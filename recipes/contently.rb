@@ -68,8 +68,31 @@ git_client 'default' do
   action :install
 end
 
+directory "/home/#{user_name}/.ssh" do
+  owner user_name
+  group user_group
+  mode '0755'
+  recursive true
+  action :create
+end
+
+template "/home/#{user_name}/.ssh/contently_rsa.pub" do
+  source "id_rsa.pub.erb"
+  owner user_name
+  mode 0600
+  variables({ :pub_key => node[:ssh][:contently][:pub_key] })
+end
+
+template "/home/#{user_name}/.ssh/contently_rsa" do
+  source "id_rsa.erb"
+  owner user_name
+  mode 0600
+  variables({ :priv_key => node[:ssh][:contently][:priv_key] })
+end
+
 git project_dir do
-  repository 'git@github.com:contently/contently.git'
+  # repository 'git@github.com:contently/contently.git'
+  repository "ext::ssh -i /home/#{user_name}/.ssh/contently_rsa -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no git@github.com:contently/contently.git"
   revision 'master'
   action :sync
 end
