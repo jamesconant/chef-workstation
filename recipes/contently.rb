@@ -64,6 +64,10 @@ directory project_dir do
   action :create
 end
 
+git_client 'default' do
+  action :install
+end
+
 git project_dir do
   repository 'git@github.com:contently/contently.git'
   revision 'master'
