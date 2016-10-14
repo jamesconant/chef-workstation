@@ -60,6 +60,7 @@ directory project_dir do
   owner user_name
   group user_group
   mode '0755'
+  recursive true
   action :create
 end
 
