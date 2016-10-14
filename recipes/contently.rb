@@ -77,21 +77,21 @@ directory "/home/#{user_name}/.ssh" do
 end
 
 Chef::Log.fatal("BEGIN NODE SSH LOG")
-Chef::Log.fatal(node[:ssh])
+Chef::Log.fatal(node['ssh'])
 Chef::Log.fatal("END NODE SSH LOG")
 
 template "/home/#{user_name}/.ssh/contently_rsa.pub" do
   source "id_rsa.pub.erb"
   owner user_name
   mode 0600
-  variables({ :pub_key => node[:ssh][:contently][:pub_key] })
+  variables({ :pub_key => node['ssh']['contently']['pub_key'] })
 end
 
 template "/home/#{user_name}/.ssh/contently_rsa" do
   source "id_rsa.erb"
   owner user_name
   mode 0600
-  variables({ :priv_key => node[:ssh][:contently][:priv_key] })
+  variables({ :priv_key => node['ssh']['contently']['priv_key'] })
 end
 
 git project_dir do
