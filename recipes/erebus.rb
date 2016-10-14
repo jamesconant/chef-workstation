@@ -7,9 +7,9 @@
 # All rights reserved - Do Not Redistribute
 #
 
-include_recipe 'workstation::default'
+# include_recipe 'workstation::default'
 include_recipe 'workstation::contently'
-include_recipe 'workstation::intel_wifi'
-
-package 'wicd-curses'
+# include_recipe 'workstation::intel_wifi'
+#
+# package 'wicd-curses'
 
