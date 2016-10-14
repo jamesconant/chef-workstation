@@ -12,4 +12,3 @@ include_recipe 'workstation::contently'
 include_recipe 'workstation::intel_wifi'
 
 package 'wicd-curses'
-

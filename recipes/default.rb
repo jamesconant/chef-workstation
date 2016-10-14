@@ -23,20 +23,17 @@ include_recipe 'desktop::fonts'
 include_recipe 'desktop::google-chrome'
 include_recipe 'desktop::heroku'
 include_recipe 'workstation::i3'
-# java recipe currently broken
-# include_recipe 'desktop::java'
 include_recipe 'desktop::pc-speaker'
 include_recipe 'desktop::ruby'
-# require java recipe :(
-# include_recipe 'desktop::sbt'
-# include_recipe 'desktop::scala'
-
-# apt repo not getting set properly
-# include_recipe 'desktop::spotify'
-
+include_recipe 'desktop::spotify'
 include_recipe 'desktop::ssh'
 include_recipe 'desktop::user'
 include_recipe 'desktop::vagrant'
+
+# java recipe currently broken
+# include_recipe 'desktop::java'
+# include_recipe 'desktop::sbt'
+# include_recipe 'desktop::scala'
 
 #
 # broken by upstream bug in ifupdown
