@@ -5,6 +5,8 @@
 # Copyright (c) 2016 James Conant, All Rights Reserved.
 #
 
+node.default['postgresql']['enable_pgdg_apt'] = false
+
 include_recipe 'postgresql::client'
 include_recipe 'postgresql::server'
 include_recipe 'database::postgresql'
