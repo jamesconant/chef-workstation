@@ -46,7 +46,9 @@ package [
   :inkscape,
   :keepassx,
   :vim,
-  :zip
+  :zip,
+  :cups,
+  'task-print-server'
 ] do
   action :upgrade
   timeout 3600
