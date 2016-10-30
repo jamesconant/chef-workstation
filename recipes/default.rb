@@ -39,7 +39,7 @@ include_recipe 'desktop::user'
 # broken by upstream bug in ifupdown
 #
 # include_recipe 'desktop::docker'
-# include_recipe 'workstation::slack'
+include_recipe 'workstation::slack'
 
 package [
   :gimp,
