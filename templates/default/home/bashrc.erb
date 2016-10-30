@@ -2,8 +2,9 @@ PATH="$PATH:/opt:/opt/wine/bin:/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/sbin:/us
 
 # SSH
 eval `ssh-agent -s`
-# this should be generalized better...
-ssh-add <%= @home_dir %>/.ssh/hermes_jconant_rsa
+ssh-add <%= @home_dir %>/.ssh/<%= @host_name %>_bitbucket_rsa
+ssh-add <%= @home_dir %>/.ssh/<%= @host_name %>_github_personal_rsa
+ssh-add <%= @home_dir %>/.ssh/<%= @host_name %>_github_work_rsa
 
 # General
 
