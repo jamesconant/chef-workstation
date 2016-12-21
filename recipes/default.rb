@@ -18,6 +18,7 @@ unless node['platform'] == 'debian'
 end
 
 include_recipe 'desktop::apt'
+include_recipe 'desktop::backports'
 include_recipe 'workstation::configs'
 include_recipe 'desktop::fonts'
 include_recipe 'desktop::google-chrome'
