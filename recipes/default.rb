@@ -21,25 +21,23 @@ include_recipe 'desktop::apt'
 include_recipe 'workstation::configs'
 include_recipe 'desktop::fonts'
 include_recipe 'desktop::google-chrome'
-#include_recipe 'desktop::heroku'
+include_recipe 'desktop::heroku'
 include_recipe 'workstation::i3'
 include_recipe 'desktop::pc-speaker'
-#include_recipe 'desktop::ruby'
-#include_recipe 'desktop::spotify'
+include_recipe 'desktop::ruby'
+include_recipe 'desktop::spotify'
 include_recipe 'desktop::ssh'
 include_recipe 'desktop::user'
-#include_recipe 'desktop::vagrant'
-
-# java recipe currently broken
-# include_recipe 'desktop::java'
-# include_recipe 'desktop::sbt'
-# include_recipe 'desktop::scala'
+include_recipe 'desktop::vagrant' # depends on desktop::user
+include_recipe 'desktop::java'
+include_recipe 'desktop::sbt' # depends on desktop::java
+include_recipe 'desktop::scala' # depends on desktop::java
 
 #
 # broken by upstream bug in ifupdown
 #
-# include_recipe 'desktop::docker'
-# include_recipe 'workstation::slack'
+include_recipe 'desktop::docker'
+include_recipe 'workstation::slack'
 
 package [
   :gimp,
