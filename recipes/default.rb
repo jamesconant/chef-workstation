@@ -35,11 +35,8 @@ include_recipe 'desktop::user'
 # include_recipe 'desktop::java'
 # include_recipe 'desktop::sbt' # depends on desktop::java
 # include_recipe 'desktop::scala' # depends on desktop::java
+# include_recipe 'desktop::docker'
 
-#
-# broken by upstream bug in ifupdown
-#
-include_recipe 'desktop::docker'
 include_recipe 'workstation::slack'
 
 package [
