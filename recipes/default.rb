@@ -29,10 +29,12 @@ include_recipe 'desktop::ruby'
 include_recipe 'desktop::spotify'
 include_recipe 'desktop::ssh'
 include_recipe 'desktop::user'
+
+# backports recipe currently busted. Ooops?
 # include_recipe 'desktop::vagrant' # depends on desktop::user, virtualbox recipe currently busted
-include_recipe 'desktop::java'
-include_recipe 'desktop::sbt' # depends on desktop::java
-include_recipe 'desktop::scala' # depends on desktop::java
+# include_recipe 'desktop::java'
+# include_recipe 'desktop::sbt' # depends on desktop::java
+# include_recipe 'desktop::scala' # depends on desktop::java
 
 #
 # broken by upstream bug in ifupdown
