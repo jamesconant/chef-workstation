@@ -29,15 +29,12 @@ include_recipe 'desktop::ruby'
 include_recipe 'desktop::spotify'
 include_recipe 'desktop::ssh'
 include_recipe 'desktop::user'
-
-# backports recipe currently busted. Ooops?
-# include_recipe 'desktop::vagrant' # depends on desktop::user, virtualbox recipe currently busted
-# include_recipe 'desktop::java'
-# include_recipe 'desktop::sbt' # depends on desktop::java
-# include_recipe 'desktop::scala' # depends on desktop::java
-# include_recipe 'desktop::docker'
-
-include_recipe 'workstation::slack'
+include_recipe 'desktop::vagrant'
+include_recipe 'desktop::java'
+include_recipe 'desktop::sbt'
+include_recipe 'desktop::scala'
+include_recipe 'desktop::docker'
+include_recipe 'desktop::slack'
 
 package [
   :gimp,
@@ -46,7 +43,8 @@ package [
   :vim,
   :zip,
   :cups,
-  'task-print-server'
+  'task-print-server',
+  :mumble
 ] do
   action :upgrade
   timeout 3600

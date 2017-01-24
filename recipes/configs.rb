@@ -5,6 +5,12 @@
 # Copyright (c) 2016 James Conant, All Rights Reserved.
 #
 
+
+#
+# TODO This recipe should be cleaned up / reconsidered.
+# - i3 config is located with i3 recipe
+#
+
 include_recipe 'desktop::user'
 
 desktop_user = node['desktop']['user']['name']

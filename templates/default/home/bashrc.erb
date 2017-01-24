@@ -1,5 +1,7 @@
 PATH="$PATH:/opt:/opt/wine/bin:/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/sbin:/usr/local/bin"
 
+eval "$(rbenv init -)"
+
 # SSH
 eval `ssh-agent -s`
 ssh-add <%= @home_dir %>/.ssh/<%= @host_name %>_bitbucket_rsa
@@ -8,7 +10,6 @@ ssh-add <%= @home_dir %>/.ssh/<%= @host_name %>_github_work_rsa
 
 # General
 
-#alias u='sudo apt-get update && sudo apt-get upgrade'
 alias eb='vim ~/.bashrc'
 alias sb='source ~/.bashrc'
 
@@ -30,7 +31,7 @@ esac
 
 PS1=$XTITLE"\u@\h $ "
 
-# Git / Hub
+# Git
 
 source ~/.git_bash_completion
 alias g="git"
@@ -63,6 +64,7 @@ alias kc="time be kitchen create"
 alias ko="time be kitchen converge"
 alias kv="time be kitchen verify"
 alias kt="time be kitchen test"
+alias ks="be kitchen login"
 
 # Wifi
 
@@ -73,8 +75,6 @@ alias wifi="wicd-curses"
 export QMAKE=/usr/bin/qmake-qt4
 export BROWSER='/usr/bin/google-chrome --new-window'
 
-# Projects
-
 # Rails General
 
 alias s="be rails s"
@@ -82,11 +82,6 @@ alias c="be rails c"
 alias m="be rake db:migrate"
 alias t="time be rake test"
 alias r="time be rspec"
-
-# Royce Rails
-
-alias roy="cd ~/projects/royce_rails"
-alias dep="git push heroku master && heroku run rake db:migrate && heroku restart"
 
 # Contently
 
