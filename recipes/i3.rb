@@ -15,6 +15,13 @@ include_recipe 'desktop::user'
 desktop_user = node['desktop']['user']['name']
 desktop_group = node['desktop']['user']['group']
 
+directory "/home/#{desktop_user}/.i3" do
+  owner desktop_user
+  group desktop_group
+  action :create
+  mode 0755
+end
+
 template "/home/#{desktop_user}/.i3/config" do
   owner desktop_user
   group desktop_group
