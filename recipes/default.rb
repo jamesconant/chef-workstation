@@ -26,7 +26,7 @@ include_recipe 'desktop::heroku'
 include_recipe 'workstation::i3'
 include_recipe 'desktop::pc-speaker'
 include_recipe 'desktop::ruby'
-include_recipe 'desktop::spotify'
+#include_recipe 'desktop::spotify' - appears to be broken right now
 include_recipe 'desktop::ssh'
 include_recipe 'desktop::user'
 include_recipe 'desktop::vagrant'
