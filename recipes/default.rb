@@ -26,7 +26,7 @@ include_recipe 'desktop::heroku'
 include_recipe 'workstation::i3'
 include_recipe 'desktop::pc-speaker'
 include_recipe 'desktop::ruby'
-include_recipe 'desktop::spotify'
+# include_recipe 'desktop::spotify'
 include_recipe 'desktop::ssh'
 include_recipe 'desktop::user'
 include_recipe 'desktop::vagrant'
@@ -34,7 +34,7 @@ include_recipe 'desktop::java'
 include_recipe 'desktop::sbt'
 include_recipe 'desktop::scala'
 include_recipe 'desktop::docker'
-include_recipe 'desktop::slack'
+# include_recipe 'desktop::slack'
 
 package [
   :gimp,
