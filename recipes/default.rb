@@ -23,7 +23,6 @@ include_recipe 'workstation::configs'
 include_recipe 'desktop::fonts'
 include_recipe 'desktop::google-chrome'
 include_recipe 'desktop::heroku'
-include_recipe 'workstation::i3'
 include_recipe 'desktop::pc-speaker'
 include_recipe 'desktop::ruby'
 # include_recipe 'desktop::spotify'
@@ -43,8 +42,7 @@ package [
   :vim,
   :zip,
   :cups,
-  'task-print-server',
-  :mumble
+  'task-print-server'
 ] do
   action :upgrade
   timeout 3600
