@@ -32,7 +32,7 @@ include_recipe 'desktop::vagrant'
 include_recipe 'desktop::java'
 include_recipe 'desktop::sbt'
 include_recipe 'desktop::scala'
-include_recipe 'desktop::docker'
+# include_recipe 'desktop::docker' -> very fragile, complains about aufs everytime, not idempotent
 # include_recipe 'desktop::slack'
 
 package [

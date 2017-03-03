@@ -4,9 +4,9 @@ eval "$(rbenv init -)"
 
 # SSH
 eval `ssh-agent -s`
-ssh-add <%= @home_dir %>/.ssh/<%= @host_name %>_bitbucket_rsa
-ssh-add <%= @home_dir %>/.ssh/<%= @host_name %>_github_personal_rsa
-ssh-add <%= @home_dir %>/.ssh/<%= @host_name %>_github_work_rsa
+ssh-add <%= @user_name %>/.ssh/<%= @host_name %>_<%= @user_name %>_bitbucket_rsa
+ssh-add <%= @user_name %>/.ssh/<%= @host_name %>_<%= @user_name %>_personal_rsa
+ssh-add <%= @user_name %>/.ssh/<%= @host_name %>_<%= @user_name %>_contently_github_rsa
 
 # General
 
@@ -52,11 +52,10 @@ alias bi="b install --path vendor"
 alias binit="bi && b package && echo 'vendor/**/*' >> .gitignore && echo '.idea/**/*' >> .gitignore && echo '.bundle/**/*' >> .gitignore"
 
 # Chef
-<%- if @host_name %>
-alias jber="rm /home/jconant/chef/chef-<%= @host_name %>/Berksfile.lock && berks vendor -b /home/jconant/chef/chef-<%= @host_name %>/Berksfile /home/jconant/chef/cookbooks"
+alias jdel="rm /home/jconant/chef/chef-<%= @host_name %>/Berksfile.lock"
+alias jber="berks vendor -b /home/jconant/chef/chef-<%= @host_name %>/Berksfile /home/jconant/chef/cookbooks"
 alias jche="sudo chef-client -c /home/jconant/chef/chef-<%= @host_name %>/client.rb"
 alias cu="jber && jche"
-<%- end %>
 
 # Test Kitchen
 alias kl="be kitchen list"
