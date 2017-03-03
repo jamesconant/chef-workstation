@@ -16,7 +16,7 @@ include_recipe 'desktop::user'
 desktop_user = node['desktop']['user']['name']
 desktop_group = node['desktop']['user']['group']
 
-raise "MissingHostName" unless node[:host][:name].present?
+raise "MissingHostName" unless node[:host][:name]
 
 ["bashrc", "vimrc", "gitconfig", "git_bash_completion"].each do |config|
   template "/home/#{desktop_user}/.#{config}" do
