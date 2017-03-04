@@ -33,7 +33,7 @@ include_recipe 'desktop::java'
 include_recipe 'desktop::sbt'
 include_recipe 'desktop::scala'
 # include_recipe 'desktop::docker' -> very fragile, complains about aufs everytime, not idempotent
-include_recipe 'desktop::slack'
+# include_recipe 'desktop::slack'
 
 package [
   :gimp,
