@@ -4,8 +4,8 @@ eval "$(rbenv init -)"
 
 # SSH
 eval `ssh-agent -s`
-ssh-add <%= @user_name %>/.ssh/<%= @host_name %>_<%= @user_name %>_github_rsa
-ssh-add <%= @user_name %>/.ssh/<%= @host_name %>_<%= @user_name %>_contently_github_rsa
+ssh-add /home/<%= @user_name %>/.ssh/<%= @host_name %>_<%= @user_name %>_github_rsa
+ssh-add /home/<%= @user_name %>/.ssh/<%= @host_name %>_<%= @user_name %>_contently_github_rsa
 
 # General
 
