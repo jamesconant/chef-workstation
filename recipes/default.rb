@@ -18,22 +18,23 @@ unless node['platform'] == 'debian'
 end
 
 include_recipe 'desktop::apt'
-include_recipe 'desktop::backports'
+# include_recipe 'desktop::backports'
 include_recipe 'workstation::configs'
 include_recipe 'desktop::fonts'
 include_recipe 'desktop::google-chrome'
-include_recipe 'desktop::heroku'
+# include_recipe 'desktop::heroku'
 include_recipe 'desktop::pc-speaker'
-include_recipe 'desktop::ruby'
+# include_recipe 'desktop::ruby'
 # include_recipe 'desktop::spotify'
 include_recipe 'desktop::ssh'
 include_recipe 'desktop::user'
-include_recipe 'desktop::vagrant'
-include_recipe 'desktop::java'
-include_recipe 'desktop::sbt'
-include_recipe 'desktop::scala'
+# include_recipe 'desktop::vagrant'
+# include_recipe 'desktop::java'
+# include_recipe 'desktop::sbt'
+# include_recipe 'desktop::scala'
 # include_recipe 'desktop::docker' -> very fragile, complains about aufs everytime, not idempotent
-# include_recipe 'desktop::slack'
+include_recipe 'desktop::slack'
+include_recipe 'desktop::steam'
 
 package [
   :gimp,
@@ -42,7 +43,8 @@ package [
   :vim,
   :zip,
   :cups,
-  'task-print-server'
+  'task-print-server',
+  :mumble
 ] do
   action :upgrade
   timeout 3600
