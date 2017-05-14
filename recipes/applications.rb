@@ -2,7 +2,7 @@
 # Cookbook Name:: workstation
 # Recipe:: applications
 #
-# Copyright 2016, James Conant
+# Copyright 2017, James Conant
 #
 # All rights reserved - Do Not Redistribute
 #
@@ -16,7 +16,8 @@ package [
   :zip,
   :cups,
   'task-print-server',
-  :mumble
+  :mumble,
+  :terminator
 ] do
   action :upgrade
   timeout 3600

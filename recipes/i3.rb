@@ -2,7 +2,7 @@
 # Cookbook Name:: workstation
 # Recipe:: i3
 #
-# Copyright 2016, James Conant
+# Copyright 2017, James Conant
 #
 # All rights reserved - Do Not Redistribute
 #
@@ -25,7 +25,7 @@ end
 template "/home/#{desktop_user}/.i3/config" do
   owner desktop_user
   group desktop_group
-  source "home/i3.erb"
+  source "home/i3"
   variables({ :home_dir => node[:desktop][:user][:home],
               :host_name => node[:host][:name] })
 end

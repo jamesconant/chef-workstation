@@ -2,7 +2,7 @@
 # Cookbook Name:: workstation
 # Recipe:: default
 #
-# Copyright 2016, James Conant
+# Copyright 2017, James Conant
 #
 # All rights reserved - Do Not Redistribute
 #
@@ -35,10 +35,7 @@ include_recipe 'desktop::fonts'
 include_recipe 'desktop::pc-speaker'
 include_recipe 'desktop::ssh'
 include_recipe 'desktop::graphics'
-# create "networking" recipe for this -- maybe include ssh?
-# if has intel wifi, set this stuff up...
-# include_recipe 'workstation::intel_wifi'
-# package 'wicd-curses'
+include_recipe 'workstation::networking'
 
 #
 # Languages
@@ -55,8 +52,7 @@ include_recipe 'workstation::applications'
 include_recipe 'desktop::google-chrome'
 include_recipe 'desktop::spotify'
 include_recipe 'desktop::slack'
-include_recipe 'desktop::steam'
-# create a "games" recipe that wraps this and SC2
+include_recipe 'workstation::games'
 
 #
 # Tools
