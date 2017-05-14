@@ -56,6 +56,7 @@ alias jdelc="rm -rf /home/<%= @user_name %>/chef/cookbooks"
 alias jber="berks vendor -b /home/<%= @user_name %>/chef/chef-workstation/Berksfile /home/<%= @user_name %>/chef/cookbooks"
 alias jche="sudo chef-client -c /home/<%= @user_name %>/chef/chef-workstation/client.rb"
 alias cu="jber && jche"
+alias upcfg="jber && sudo chef-client -c /home/<%= @user_name %>/chef/chef-workstation/config_client.rb"
 
 # Test Kitchen
 alias kl="be kitchen list"

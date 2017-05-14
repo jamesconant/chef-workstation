@@ -34,7 +34,7 @@ include_recipe 'desktop::user'
 include_recipe 'desktop::fonts'
 include_recipe 'desktop::pc-speaker'
 include_recipe 'desktop::ssh'
-include_recipe 'desktop::graphics'
+include_recipe 'workstation::graphics'
 include_recipe 'workstation::networking'
 
 #
