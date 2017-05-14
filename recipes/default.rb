@@ -21,6 +21,15 @@ unless node['platform'] == 'debian'
 end
 
 #
+# Halt run of recipes if not on a reasonably modern kernel. There is probably a
+# less stupid way to do this.
+#
+if `uname -r`[0].to_i < 4
+  raise StandardError,
+        'Please upgrade to a somewhat modern kernel, such as 4.x'
+end
+
+#
 # Base
 #
 include_recipe 'desktop::apt'
