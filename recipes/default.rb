@@ -58,5 +58,4 @@ include_recipe 'workstation::games'
 # Tools
 #
 include_recipe 'desktop::heroku'
-# include_recipe 'desktop::vagrant'
-# include_recipe 'desktop::docker' -> very fragile, complains about aufs everytime, not idempotent
+include_recipe 'desktop::docker'

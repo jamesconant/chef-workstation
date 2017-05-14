@@ -1,6 +1,6 @@
 name             'workstation'
 maintainer       'James Conant'
-maintainer_email 'jfaconant@gmail.com'
+maintainer_email '<an email>'
 license          'All rights reserved'
 description      'Installs/Configures workstation'
 # long_description IO.read(File.join(File.dirname(__FILE__), 'README.md'))
