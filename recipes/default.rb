@@ -6,9 +6,12 @@
 #
 # All rights reserved - Do Not Redistribute
 #
+
+#
 # Debugging
 # chef_gem 'pry'
 # require 'pry'
+#
 
 #
 # This workbook only supports Debian
@@ -17,37 +20,47 @@ unless node['platform'] == 'debian'
   raise "Unsupported platform: #{node['platform']}"
 end
 
+#
+# Base
+#
 include_recipe 'desktop::apt'
 include_recipe 'desktop::backports'
 include_recipe 'workstation::configs'
-include_recipe 'desktop::fonts'
-include_recipe 'desktop::google-chrome'
-include_recipe 'desktop::heroku'
-include_recipe 'desktop::pc-speaker'
-include_recipe 'desktop::ruby'
-include_recipe 'desktop::spotify'
-include_recipe 'desktop::ssh'
 include_recipe 'desktop::user'
-# include_recipe 'desktop::vagrant'
+
+#
+# System
+#
+include_recipe 'desktop::fonts'
+include_recipe 'desktop::pc-speaker'
+include_recipe 'desktop::ssh'
+include_recipe 'desktop::graphics'
+# create "networking" recipe for this -- maybe include ssh?
+# if has intel wifi, set this stuff up...
+# include_recipe 'workstation::intel_wifi'
+# package 'wicd-curses'
+
+#
+# Languages
+#
+include_recipe 'desktop::ruby'
 include_recipe 'desktop::java'
-# include_recipe 'desktop::sbt'
-# include_recipe 'desktop::scala'
-# include_recipe 'desktop::docker' -> very fragile, complains about aufs everytime, not idempotent
+include_recipe 'desktop::scala'
+include_recipe 'desktop::sbt'
+
+#
+# Applications
+#
+include_recipe 'workstation::applications'
+include_recipe 'desktop::google-chrome'
+include_recipe 'desktop::spotify'
 include_recipe 'desktop::slack'
 include_recipe 'desktop::steam'
-include_recipe 'desktop::graphics'
+# create a "games" recipe that wraps this and SC2
 
-package [
-  :i3,
-  :gimp,
-  :inkscape,
-  :keepassx,
-  :vim,
-  :zip,
-  :cups,
-  'task-print-server',
-  :mumble
-] do
-  action :upgrade
-  timeout 3600
-end
+#
+# Tools
+#
+include_recipe 'desktop::heroku'
+# include_recipe 'desktop::vagrant'
+# include_recipe 'desktop::docker' -> very fragile, complains about aufs everytime, not idempotent

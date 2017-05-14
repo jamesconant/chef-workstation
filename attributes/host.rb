@@ -1,1 +1,3 @@
-default['host']['name'] = false
+require 'socket'
+
+default['host']['name'] = Socket.gethostname
