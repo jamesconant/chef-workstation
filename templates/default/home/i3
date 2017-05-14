@@ -183,4 +183,4 @@ bindcode $mod+233 exec xbacklight -inc 10 -time 1 -steps 1
 bindsym $mod+q exec i3lock -c 333333 -n
 
 # Desktop Background
-xsetroot -solid "#333333"
+exec --no-startup-id 'xsetroot -solid "#333333"

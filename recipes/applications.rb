@@ -8,7 +8,6 @@
 #
 
 package [
-  :i3,
   :gimp,
   :inkscape,
   :keepassx,

@@ -7,25 +7,42 @@
 # All rights reserved - Do Not Redistribute
 #
 
-package 'xorg'
-package 'xdm'
-package 'i3'
+include_recipe 'workstation::graphics'
+
+package [:i3, :xbacklight] do
+  action :upgrade
+  timeout 3600
+end
 
 include_recipe 'desktop::user'
 desktop_user = node['desktop']['user']['name']
 desktop_group = node['desktop']['user']['group']
 
-directory "/home/#{desktop_user}/.i3" do
-  owner desktop_user
-  group desktop_group
-  action :create
-  mode 0755
+[
+  "/home/#{desktop_user}/.i3",
+  "/home/#{desktop_user}/.config/i3status"
+].each do |dir|
+  directory dir do
+    owner desktop_user
+    group desktop_group
+    action :create
+    mode 0755
+  end
 end
 
 template "/home/#{desktop_user}/.i3/config" do
   owner desktop_user
   group desktop_group
   source "home/i3"
-  variables({ :home_dir => node[:desktop][:user][:home],
-              :host_name => node[:host][:name] })
+end
+
+template "/home/#{desktop_user}/.config/i3status/config" do
+  owner desktop_user
+  group desktop_group
+  source 'home/i3status.erb'
+  variables({
+    likely_laptop: system(
+      'lspci | grep "Intel Corporation Centrino Ultimate-N 6300"'
+    )
+  })
 end

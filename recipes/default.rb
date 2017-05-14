@@ -37,6 +37,7 @@ include_recipe 'workstation::audio'
 include_recipe 'desktop::ssh'
 include_recipe 'workstation::graphics'
 include_recipe 'workstation::networking'
+include_recipe 'workstation::i3'
 
 #
 # Languages
