@@ -1,6 +1,6 @@
 ## TO-DO
 - kernel update recipe
-- dedicated i3 recipe -- i3 and xbacklight packages, configs, etc
+- update i3 confs to handle auto-starts, positioning, status bar font color, etc
 - media recipe -- install and configure sonarr, couchpotato, sabnzbd, plex
 - ide recipe -- install and configure rubymine, intellij, include dictionaries?
-- update test scripts to download copy of chefdk for install_server.rb to host 
+- update test scripts to download copy of chefdk for install_server.rb to host
