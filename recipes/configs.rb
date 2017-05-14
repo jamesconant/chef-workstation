@@ -18,11 +18,11 @@ desktop_group = node['desktop']['user']['group']
 
 raise "MissingHostName" unless node[:host][:name]
 
-["bashrc", "vimrc", "gitconfig", "git_bash_completion"].each do |config|
+["bashrc.erb", "vimrc", "gitconfig", "git_bash_completion"].each do |config|
   template "/home/#{desktop_user}/.#{config}" do
     owner desktop_user
     group desktop_group
-    source "home/#{config}.erb"
+    source "home/#{config}"
     variables({ :user_name => desktop_user,
                 :host_name => node[:host][:name] })
   end
