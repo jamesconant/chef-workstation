@@ -1,7 +1,11 @@
 [global_config]
+  suppress_multiple_term_dialog = True
 [keybindings]
 [profiles]
   [[default]]
+    use_system_font = False
+    font = Inconsolata Bold 12
+    background_image = None
     scrollback_infinite = True
 [layouts]
   [[default]]
