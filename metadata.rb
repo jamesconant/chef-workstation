@@ -3,7 +3,7 @@ maintainer       'James Conant'
 maintainer_email 'jfaconant@gmail.com'
 license          'All rights reserved'
 description      'Installs/Configures workstation'
-long_description IO.read(File.join(File.dirname(__FILE__), 'README.md'))
+# long_description IO.read(File.join(File.dirname(__FILE__), 'README.md'))
 version          '0.5.13'
 
 #
