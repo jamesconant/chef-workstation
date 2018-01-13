@@ -9,13 +9,9 @@ verifier:
   name: inspec
 
 platforms:
-  - name: debian-8.3
+  - name: debian/stretch64
 
 suites:
   - name: desktop
     run_list:
-      - recipe[workstation::desktop]
-
-  - name: laptop
-    run_list:
-      - recipe[workstation::laptop]
+      - recipe[workstation::default]

@@ -33,40 +33,40 @@ end
 # Base
 #
 include_recipe 'desktop::apt'
-include_recipe 'desktop::backports'
-include_recipe 'workstation::configs'
-include_recipe 'desktop::user'
-
+# include_recipe 'desktop::backports'
+# include_recipe 'workstation::configs'
+# include_recipe 'desktop::user'
 #
-# System
+# #
+# # System
+# #
+# include_recipe 'desktop::fonts'
+# include_recipe 'desktop::pc-speaker'
+# include_recipe 'workstation::audio'
+# include_recipe 'desktop::ssh'
+# include_recipe 'workstation::graphics'
+# include_recipe 'workstation::networking'
+# include_recipe 'workstation::i3'
 #
-include_recipe 'desktop::fonts'
-include_recipe 'desktop::pc-speaker'
-include_recipe 'workstation::audio'
-include_recipe 'desktop::ssh'
-include_recipe 'workstation::graphics'
-include_recipe 'workstation::networking'
-include_recipe 'workstation::i3'
-
+# #
+# # Languages
+# #
+# include_recipe 'desktop::ruby'
+# include_recipe 'desktop::java'
+# include_recipe 'desktop::scala'
+# include_recipe 'desktop::sbt'
 #
-# Languages
+# #
+# # Applications
+# #
+# include_recipe 'workstation::applications'
+# include_recipe 'desktop::google-chrome'
+# include_recipe 'desktop::spotify'
+# include_recipe 'desktop::slack'
+# include_recipe 'workstation::games'
 #
-include_recipe 'desktop::ruby'
-include_recipe 'desktop::java'
-include_recipe 'desktop::scala'
-include_recipe 'desktop::sbt'
-
-#
-# Applications
-#
-include_recipe 'workstation::applications'
-include_recipe 'desktop::google-chrome'
-include_recipe 'desktop::spotify'
-include_recipe 'desktop::slack'
-include_recipe 'workstation::games'
-
-#
-# Tools
-#
-include_recipe 'desktop::heroku'
-include_recipe 'desktop::docker'
+# #
+# # Tools
+# #
+# include_recipe 'desktop::heroku'
+# include_recipe 'desktop::docker'
