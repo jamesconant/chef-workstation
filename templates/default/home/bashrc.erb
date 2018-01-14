@@ -51,13 +51,13 @@ alias bi="b install --path vendor"
 alias binit="bi && b package && echo 'vendor/**/*' >> .gitignore && echo '.idea/**/*' >> .gitignore && echo '.bundle/**/*' >> .gitignore"
 
 # Chef
-alias jdelb="rm /home/<%= @user_name %>/chef/chef-workstation/Berksfile.lock"
-alias jdelc="rm -rf /home/<%= @user_name %>/chef/cookbooks"
-alias jber="berks vendor -b /home/<%= @user_name %>/chef/chef-workstation/Berksfile /home/<%= @user_name %>/chef/cookbooks"
-alias jche="sudo chef-client -c /home/<%= @user_name %>/chef/chef-workstation/client.rb"
+alias jdelb="rm /home/<%= @user_name %>/projects/chef-workstation/Berksfile.lock"
+alias jdelc="rm -rf /home/<%= @user_name %>/projects/cookbooks"
+alias jber="berks vendor -b /home/<%= @user_name %>/projects/chef-workstation/Berksfile /home/<%= @user_name %>/chef/cookbooks"
+alias jche="sudo chef-client -c /home/<%= @user_name %>/projects/chef-workstation/client.rb"
 alias cu="jber && jche -l error"
 alias cudbg="jber && jche"
-alias upcfg="jber && sudo chef-client -c /home/<%= @user_name %>/chef/chef-workstation/config_client.rb"
+alias upcfg="jber && sudo chef-client -c /home/<%= @user_name %>/projects/chef-workstation/config_client.rb"
 
 # Test Kitchen
 alias kl="kitchen list"
