@@ -7,8 +7,6 @@
 # All rights reserved - Do Not Redistribute
 #
 
-include_recipe 'workstation::graphics'
-
 package [:i3, :xbacklight] do
   action :upgrade
   timeout 3600
@@ -26,6 +24,7 @@ desktop_group = node['desktop']['user']['group']
     owner desktop_user
     group desktop_group
     action :create
+    recursive true
     mode 0755
   end
 end

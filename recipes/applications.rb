@@ -17,7 +17,8 @@ package [
   'task-print-server',
   :mumble,
   :terminator,
-  :ntp
+  :ntp,
+  :dtrx
 ] do
   action :upgrade
   timeout 3600

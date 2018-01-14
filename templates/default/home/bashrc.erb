@@ -5,7 +5,7 @@ eval "$(rbenv init -)"
 # SSH
 eval `ssh-agent -s`
 ssh-add /home/<%= @user_name %>/.ssh/<%= @host_name %>_<%= @user_name %>_github_rsa
-ssh-add /home/<%= @user_name %>/.ssh/<%= @host_name %>_<%= @user_name %>_contently_github_rsa
+# ssh-add /home/<%= @user_name %>/.ssh/<%= @host_name %>_<%= @user_name %>_contently_github_rsa
 
 # General
 
@@ -60,12 +60,12 @@ alias cudbg="jber && jche"
 alias upcfg="jber && sudo chef-client -c /home/<%= @user_name %>/chef/chef-workstation/config_client.rb"
 
 # Test Kitchen
-alias kl="be kitchen list"
-alias kc="time be kitchen create"
-alias ko="time be kitchen converge"
-alias kv="time be kitchen verify"
-alias kt="time be kitchen test"
-alias ks="be kitchen login"
+alias kl="kitchen list"
+alias kc="time kitchen create"
+alias ko="time kitchen converge"
+alias kv="time kitchen verify"
+alias kt="time kitchen test"
+alias ks="kitchen login"
 
 # Wifi
 

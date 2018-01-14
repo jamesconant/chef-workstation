@@ -9,5 +9,6 @@ source 'https://supermarket.chef.io'
 #
 # desktop cookbook included here for test purposes.
 cookbook 'desktop', git: 'git@github.com:http-418/chef-desktop'
+# cookbook 'desktop', path: '../chef-desktop'
 
 metadata
