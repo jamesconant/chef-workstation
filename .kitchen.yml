@@ -12,6 +12,6 @@ platforms:
   - name: debian/stretch64
 
 suites:
-  - name: desktop
+  - name: workstation
     run_list:
       - recipe[workstation::default]
