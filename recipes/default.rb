@@ -70,3 +70,9 @@ include_recipe 'workstation::games'
 #
 include_recipe 'desktop::heroku'
 include_recipe 'desktop::docker'
+
+#
+# Services
+#
+include_recipe 'workstation::sabnzbdplus'
+include_recipe 'sonarr::default'

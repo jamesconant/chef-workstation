@@ -18,7 +18,9 @@ package [
   :mumble,
   :terminator,
   :ntp,
-  :dtrx
+  :dtrx,
+  'net-tools',
+  :chkconfig
 ] do
   action :upgrade
   timeout 3600

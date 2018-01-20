@@ -9,7 +9,7 @@ verifier:
   name: inspec
 
 platforms:
-  - name: debian/stretch64
+  - name: debian-9.3
 
 suites:
   - name: workstation

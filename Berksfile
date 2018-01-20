@@ -11,4 +11,6 @@ source 'https://supermarket.chef.io'
 cookbook 'desktop', git: 'git@github.com:http-418/chef-desktop'
 # cookbook 'desktop', path: '../chef-desktop'
 
+cookbook 'sonarr', git: 'git@github.com:jamesconant/sonarr-cookbook'
+
 metadata

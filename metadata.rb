@@ -15,7 +15,6 @@ version          '0.5.13'
 #
 # desktop cookbook included here for test purposes.
 depends 'desktop'
-
 depends 'apt'
 depends 'ark'
 depends 'debian', '~> 1.8'
@@ -23,3 +22,4 @@ depends 'java', '~> 1.0'
 depends 'nodejs'
 depends 'ruby_build'
 depends 'ruby_rbenv'
+depends 'sonarr'
