@@ -2,7 +2,7 @@
 # Cookbook Name:: workstation
 # Recipe:: graphics
 #
-# Copyright 2017, James Conant
+# Copyright 2018, James Conant
 #
 # All rights reserved - Do Not Redistribute
 #

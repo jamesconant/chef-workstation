@@ -2,7 +2,7 @@
 # Cookbook Name:: workstation
 # Recipe:: configs
 #
-# Copyright (c) 2017 James Conant, All Rights Reserved.
+# Copyright (c) 2018 James Conant, All Rights Reserved.
 #
 
 include_recipe 'desktop::user'
