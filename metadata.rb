@@ -4,7 +4,7 @@ maintainer_email 'james@conant.io'
 license          'All rights reserved'
 description      'Installs/Configures workstation'
 # long_description IO.read(File.join(File.dirname(__FILE__), 'README.md'))
-version          '0.5.14'
+version          '0.5.15'
 
 #
 # This wrapper cookbook is intended for itself to be wrapped as well, and not ran directly.
