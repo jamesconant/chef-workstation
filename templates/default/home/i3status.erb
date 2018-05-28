@@ -10,43 +10,70 @@
 # ß
 # If the above line is not correctly displayed, fix your editor first!
 
+#
+# Desktop
+#
+
 general {
-  colors = true
-  interval = 5
+colors = true
+interval = 1
 }
+
+# What do I want to know on my desktop?
+#
+# 1. % memory used
+# 2. each core % utilized, chart and current %
+# 3. % disk space available
+# 4. amt disk space availble - combine -> 412 GiB (68%)
+# 5. Date -> 2018.05.25
+# 6. Time -> 10:33:01 PM
+# 7. VPN status ? - not yet
+# 8. IP address ? - not yet
+
+
+#
+# Laptop
+#
+
 
 order += "disk /"
-order += "run_watch VPN"
-
-<%- if @likely_laptop %>
-  order += "wireless _first_"
-  order += "battery 0"
-<%- end %>
-
-order += "cpu_usage"
+# order += "run_watch VPN"
+order += "cpu_usage 0"
+order += "cpu_usage 1"
+order += "cpu_usage 2"
+order += "cpu_usage 3"
+order += "cpu_usage 4"
+order += "cpu_usage 5"
 order += "tztime local"
 
+<!--<%- if @likely_laptop %>-->
+  <!--order += "wireless _first_"-->
+  <!--order += "battery 0"-->
+<!--<%- end %>-->
+
 disk "/" {
-  format = "%avail"
+format = "%avail"
 }
 
-run_watch VPN {
-  pidfile = "/var/run/vpnc/pid"
-}
+# run_watch VPN {
+#   pidfile = "/var/run/vpnc/pid"
+# }
 
-wireless _first_ {
-format_up = "W: (%quality at %essid) %ip"
-format_down = "W: down"
-}
+# wireless _first_ {
+#   format_up = "W: (%quality at %essid) %ip"
+#   format_down = "W: down"
+# }
 
-battery 0 {
-format = "%status %percentage %remaining"
-}
+# battery 0 {
+#   format = "%status %percentage %remaining"
+# }
 
 cpu_usage {
-  format = "%usage"
+format = "%usage"
+degraded_threshold = 70
+max_threshold = 90
 }
 
 tztime local {
-  format = "%Y-%m-%d %I:%M:%S"
+format = "%Y-%m-%d %I:%M:%S"
 }
