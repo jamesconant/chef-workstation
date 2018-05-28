@@ -7,9 +7,9 @@ PATH="$PATH:/opt:/opt/wine/bin:/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/sbin:/us
 eval "$(rbenv init -)"
 
 # SSH
-eval `ssh-agent -s`
-ssh-add /home/<%= @user_name %>/.ssh/<%= @host_name %>_<%= @user_name %>_github_rsa
-# ssh-add /home/<%= @user_name %>/.ssh/<%= @host_name %>_<%= @user_name %>_contently_github_rsa
+
+{ eval `ssh-agent -s`; } &>/dev/null
+{ ssh-add /home/<%= @user_name %>/.ssh/<%= @host_name %>_<%= @user_name %>_github_rsa; } &>/dev/null
 
 # General
 
@@ -31,6 +31,19 @@ rxvt*)  XTITLE="\[\e]0;\w\a\]"
 *)  XTITLE=""
 ;;
 esac
+
+git_prompt() {
+local ref=$(git branch 2>/dev/null | sed -n '/\* /s///p')
+if [ "$ref" != "" ]
+then
+echo "[$ref]"
+fi
+}
+
+PS1="
+\e[1m[\D{%F %I:%M:%S}][\u][@\H][\w]\$(git_prompt)\[\e[0m\]
+
+➜ "
 
 PS1=$XTITLE"\u@\h $ "
 

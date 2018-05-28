@@ -44,7 +44,7 @@ include_recipe 'desktop::fonts'
 include_recipe 'desktop::pc-speaker'
 include_recipe 'workstation::audio'
 include_recipe 'desktop::ssh'
-include_recipe 'workstation::graphics'
+# include_recipe 'workstation::graphics'
 include_recipe 'workstation::networking'
 include_recipe 'workstation::i3'
 
@@ -63,7 +63,7 @@ include_recipe 'workstation::applications'
 # include_recipe 'desktop::google-chrome'
 include_recipe 'desktop::spotify'
 include_recipe 'desktop::slack'
-include_recipe 'workstation::games'
+# include_recipe 'workstation::games'
 
 #
 # Tools
@@ -74,5 +74,5 @@ include_recipe 'desktop::docker'
 #
 # Services
 #
-include_recipe 'workstation::sabnzbdplus'
-include_recipe 'sonarr::default'
+# include_recipe 'workstation::sabnzbdplus'
+# include_recipe 'sonarr::default'
